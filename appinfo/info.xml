@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<info>
+	<id>files_softlayer</id>
+	<name>Softlayer object storage support</name>
+	<description>Mount Softlayer object storage sources</description>
+	<licence>AGPL</licence>
+	<author>Begood Technology Corp.</author>
+	<requiremin>7</requiremin>
+	<types>
+		<filesystem/>
+	</types>
+</info>
