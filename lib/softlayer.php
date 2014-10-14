@@ -289,7 +289,7 @@ class Softlayer extends \OC\Files\Storage\Common{
 			if ( ! $this->root || $this->root[0]!='/') {
 				$this->root='/'.$this->root;
 			}
-			$this->id = 'swift:' . $this->host . ':'.$this->root . ':' . $this->user;
+			$this->id = 'softlayer:' . $this->host . ':'.$this->root . ':' . $this->user;
 		} else {
 			throw new \Exception();
 		}
