@@ -60,7 +60,7 @@ class ConoHa extends \OC\Files\Storage\Common{
 
 		$path = str_replace('#', '%23', $path);
 
-		return urlencode($path);
+		return rawurlencode($path);
 	}
 
 	const SUBCONTAINER_FILE = '.subcontainers';
