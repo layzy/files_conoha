@@ -89,6 +89,10 @@ class ConoHa extends \OC\Files\Storage\Common{
 		}
 	}
 
+	public function is_dir($path) {
+		return parent::is_dir(rawurldecode($path));
+	}
+
 	public function __construct($params) {
 		if ((empty($params['key']) and empty($params['password']))
 			or empty($params['user']) or empty($params['bucket'])
