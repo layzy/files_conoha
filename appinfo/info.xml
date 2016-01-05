@@ -2,7 +2,7 @@
 <info>
 	<id>files_conoha</id>
 	<name>ConoHa object storage support</name>
-	<description>Mount Softlayer object storage sources</description>
+	<description>Mount ConoHa object storage sources</description>
 	<licence>AGPL</licence>
 	<author>Stylez Corp.</author>
 	<requiremin>7</requiremin>
