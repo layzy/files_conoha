@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <info>
-	<id>files_conoha</id>
+	<id>files_external_conoha</id>
 	<name>ConoHa object storage support</name>
 	<description>Mount ConoHa object storage sources</description>
 	<licence>AGPL</licence>
