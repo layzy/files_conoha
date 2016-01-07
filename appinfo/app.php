@@ -16,13 +16,15 @@ if (\OC_App::isEnabled('files_external') && \OC_App::isEnabled('files_external_c
 	OC::$CLASSPATH['OC\Files\Storage\ConoHa'] = 'files_external_conoha/lib/conoha.php';
 	OC::$CLASSPATH['OC_Mount_Config'] = 'files_external/lib/config.php';
 
-	if(OC_Util::getVersion() >= 8.2){
+	$version = OC_Util::getVersion();
+
+	// Support for ver 8.2 higher
+	if ($version[0] >= 8 && $version[1] >= 2) {
 		OC::$CLASSPATH['OCA\Files\External\Api'] = 'files_external/lib/api.php';
 		OC::$CLASSPATH['OCA\Files_External\Lib\Backend\ConoHa'] = 'files_external_conoha/lib/backend/conoha.php';
 
-		OC_Mount_Config::$app = new \OCA\Files_external\Appinfo\Application();
 		$container = OC_Mount_Config::$app->getContainer();
-		$container->registerService('L10n', function($c)use($l){
+		$container->registerService('L10n', function ($c) use ($l) {
 			return $l;
 		});
 		$service = $container->query('OCA\Files_External\Service\BackendService');
@@ -30,11 +32,7 @@ if (\OC_App::isEnabled('files_external') && \OC_App::isEnabled('files_external_c
 		$service->registerBackend(
 			$container->query('OCA\Files_External\Lib\Backend\ConoHa')
 		);
-
-		$mountProvider = $container->query('OCA\Files_External\Config\ConfigAdapter');
-		\OC::$server->getMountProviderCollection()->registerProvider($mountProvider);
-	}else{
-
+	} else {
 		OC_Mount_Config::registerBackend('\OC\Files\Storage\ConoHa', array(
 			'backend' => (string)$l->t('ConoHa Object Storage'),
 			'priority' => 100,
@@ -50,5 +48,4 @@ if (\OC_App::isEnabled('files_external') && \OC_App::isEnabled('files_external_c
 			),
 			'has_dependencies' => true));
 	}
-
 }
