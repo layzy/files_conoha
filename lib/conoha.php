@@ -52,7 +52,7 @@ class ConoHa extends \OC\Files\Storage\Common{
 	 * @param string $path
 	 */
 	private function normalizePath($path) {
-		$path = trim($path, '/');
+		$path = trim(rawurldecode($path), '/');
 
 		if (!$path) {
 			$path = '.';
