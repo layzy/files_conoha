@@ -7,7 +7,7 @@ Place this app in **owncloud/apps/**
 （日本語のために作りましたが、他のマルチバイト言語でも多分大丈夫です）
 
 ## Publish to App
-1. **owncloud/apps/**に files_conohaディレクトリを配置
+1. `owncloud/apps/`に files_conohaディレクトリを配置
 2. システム管理者でownCloudにログイン
 3. 左上メニュー->アプリ でアプリ画面に遷移
 4. 左メニュー->無効->Files External を有効化
